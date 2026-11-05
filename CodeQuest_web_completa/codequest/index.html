@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08121b">
+  <meta name="description" content="CodeQuest: aprende HTML, CSS y Tailwind con misiones, retos y quizzes interactivos.">
+  <title>CodeQuest | Aprende a programar jugando</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#inicio" class="brand" aria-label="CodeQuest, ir al inicio"><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span><span>CODE<span class="brand-accent">QUEST</span><small>LEARN • PLAY • LEVEL UP</small></span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false">☰ <span>Menú</span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#inicio" data-nav="inicio" class="active">⌂ Inicio</a>
+        <a href="#mundos" data-nav="mundos">◈ Mundos</a>
+        <a href="#entrenamiento" data-nav="entrenamiento">⚔ Entrenamiento</a>
+        <a href="#laboratorio" data-nav="laboratorio">⌘ Laboratorio</a>
+      </nav>
+      <div class="header-level"><span class="spark">✦</span><strong id="top-xp">0 XP</strong><span class="level-pill" id="top-level">NV 1</span></div>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section id="inicio" class="hero section-block" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="online-dot"></span> TU AVENTURA COMIENZA AQUÍ</span>
+        <h1 id="hero-heading">EL CÓDIGO ES<br><span>TU SUPERPODER<span class="terminal-caret">_</span></span></h1>
+        <p>Aprende <strong>HTML, CSS y Tailwind</strong> como si estuvieras en un videojuego. Completa misiones, supera desafíos y sube de nivel. Sin clases eternas.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#mundos">▶ COMENZAR AVENTURA</a><a class="btn btn-outline" href="#entrenamiento">⚔ MIS DEBILIDADES</a></div>
+        <div class="hero-meta"><span>✧ Aprende a tu ritmo</span><span>◈ 3 mundos</span><span>✓ Progreso guardado</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Panel de personaje de CodeQuest">
+        <div class="hero-signal">● SISTEMA ONLINE <span>v1.0</span></div>
+        <div class="avatar-halo"><div class="pixel-avatar" aria-hidden="true"><div class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></div><div class="avatar-body"><i></i></div></div></div>
+        <div class="player-caption">CODER <span>LVL <b id="hero-level">01</b></span></div>
+        <div class="player-bar"><div id="hero-progress" style="width:0%"></div></div><p class="player-hint" id="hero-xp-label">0 / 100 XP para el siguiente nivel</p>
+        <div class="float-badge badge-one">✦ +XP</div><div class="float-badge badge-two">&lt;/&gt;</div>
+      </div>
+    </section>
+
+    <section class="stats-grid section-block" aria-label="Tus estadísticas">
+      <article class="stat-card"><span class="stat-icon purple">✦</span><div><strong id="stat-xp">0</strong><span>XP CONSEGUIDOS</span></div></article>
+      <article class="stat-card"><span class="stat-icon blue">◈</span><div><strong id="stat-completed">0/12</strong><span>MISIONES SUPERADAS</span></div></article>
+      <article class="stat-card"><span class="stat-icon orange">⚑</span><div><strong id="stat-weak">0</strong><span>TEMAS POR REFORZAR</span></div></article>
+      <article class="stat-card"><span class="stat-icon green">🏆</span><div><strong id="stat-badges">0</strong><span>INSIGNIAS GANADAS</span></div></article>
+    </section>
+
+    <section id="mundos" class="section-block" aria-labelledby="worlds-heading">
+      <div class="section-heading"><div><span class="eyebrow">01 / MAPA DE AVENTURA</span><h2 id="worlds-heading">ELIGE TU <span>MUNDO</span></h2><p>Tres caminos. Una misión: dominar el código.</p></div><span class="section-aside">// SELECCIONA UNA RUTA</span></div>
+      <div class="world-grid" id="world-grid">
+        <article class="world-card html-world" data-world="html"><div class="world-top"><span class="world-number">MUNDO 01</span><span class="world-symbol" aria-hidden="true">&lt;/&gt;</span></div><div class="world-art" aria-hidden="true"><span>&lt;html&gt;</span><span>  &lt;body&gt;</span><span>    &lt;h1&gt;⚡&lt;/h1&gt;</span><span>  &lt;/body&gt;</span><span>&lt;/html&gt;</span></div><span class="world-type">EL ORIGEN</span><h3>HTML <span>UNIVERSE</span></h3><p>Construye los cimientos de cualquier página web.</p><div class="world-progress-label"><span>PROGRESO</span><strong id="progress-html-label">0 / 4</strong></div><div class="world-progress"><span id="progress-html"></span></div><button class="btn world-button" type="button" data-open-world="html">EXPLORAR MUNDO <span>↗</span></button></article>
+        <article class="world-card css-world" data-world="css"><div class="world-top"><span class="world-number">MUNDO 02</span><span class="world-symbol" aria-hidden="true">✧</span></div><div class="world-art css-art" aria-hidden="true"><span>.player {</span><span>  color: #6ef8ff;</span><span>  display: flex;</span><span>  gap: 1rem;</span><span>}</span></div><span class="world-type">EL PODER DEL ESTILO</span><h3>CSS <span>DIMENSION</span></h3><p>Desbloquea colores, animaciones y diseños increíbles.</p><div class="world-progress-label"><span>PROGRESO</span><strong id="progress-css-label">0 / 4</strong></div><div class="world-progress"><span id="progress-css"></span></div><button class="btn world-button" type="button" data-open-world="css">EXPLORAR MUNDO <span>↗</span></button></article>
+        <article class="world-card tailwind-world" data-world="tailwind"><div class="world-top"><span class="world-number">MUNDO 03</span><span class="world-symbol" aria-hidden="true">≋</span></div><div class="world-art tailwind-art" aria-hidden="true"><span>bg-slate-900</span><span>text-emerald-400</span><span>rounded-xl</span><span>hover:scale-105</span></div><span class="world-type">EL ARTE DE LAS UTILIDADES</span><h3>TAILWIND <span>REALM</span></h3><p>Crea interfaces épicas combinando clases pequeñas.</p><div class="world-progress-label"><span>PROGRESO</span><strong id="progress-tailwind-label">0 / 4</strong></div><div class="world-progress"><span id="progress-tailwind"></span></div><button class="btn world-button" type="button" data-open-world="tailwind">EXPLORAR MUNDO <span>↗</span></button></article>
+      </div>
+    </section>
+
+    <section id="misiones" class="section-block mission-section" aria-labelledby="missions-heading" hidden>
+      <div class="section-heading"><div><span class="eyebrow" id="mission-world-label">MUNDO 01</span><h2 id="missions-heading">MISIÓN <span>SELECCIONADA</span></h2><p>Elige una misión y aprende en pocos pasos.</p></div><button class="btn btn-outline btn-small" id="close-missions" type="button">✕ Cerrar</button></div>
+      <div class="mission-layout"><div class="mission-list" id="mission-list"></div><div class="lesson-panel" id="lesson-panel"><p>Selecciona una misión para empezar.</p></div></div>
+    </section>
+
+    <section id="entrenamiento" class="section-block" aria-labelledby="training-heading">
+      <div class="section-heading"><div><span class="eyebrow">02 / ZONA DE ENTRENAMIENTO</span><h2 id="training-heading">TU <span>CAMPO DE BATALLA</span></h2><p>Marca los temas difíciles y vuelve a enfrentarlos cuando quieras.</p></div><span class="section-aside">// MODO PRÁCTICA</span></div>
+      <div class="training-panel"><div class="training-intro"><div class="training-graphic" aria-hidden="true">⚔</div><div><h3>Entrena tus puntos débiles</h3><p>Selecciona un tema, marca tu nivel de confianza y practica con un miniquiz.</p></div></div><div class="training-controls"><label for="training-filter">FILTRAR TEMAS</label><select id="training-filter"><option value="all">Todos los temas</option><option value="weak">🔴 Necesito ayuda</option><option value="practice">🟡 Necesito practicar</option><option value="mastered">🟢 Lo domino</option></select></div><div class="training-list" id="training-list"></div></div>
+    </section>
+
+    <section id="laboratorio" class="section-block" aria-labelledby="lab-heading">
+      <div class="section-heading"><div><span class="eyebrow">03 / ZONA DE CREACIÓN</span><h2 id="lab-heading">LABORATORIO <span>DE CÓDIGO</span></h2><p>Escribe, experimenta y observa los cambios en vivo.</p></div><span class="section-aside">// EDITOR INTERACTIVO</span></div>
+      <div class="lab-panel"><div class="lab-toolbar"><div class="window-dots"><i></i><i></i><i></i></div><span>playground / mi-primer-proyecto</span><div class="lab-actions"><button class="btn btn-outline btn-small" id="lab-reset" type="button">↺ Restaurar</button><button class="btn btn-primary btn-small" id="lab-run" type="button">▶ EJECUTAR</button></div></div><div class="lab-grid"><div class="code-editors"><div class="editor-group"><label for="lab-html">▧ index.html</label><textarea id="lab-html" spellcheck="false" aria-label="Editor HTML"></textarea></div><div class="editor-group"><label for="lab-css">✦ styles.css</label><textarea id="lab-css" spellcheck="false" aria-label="Editor CSS"></textarea></div></div><div class="preview-group"><div class="preview-top"><span>◉ VISTA PREVIA</span><span class="status-tag">● LIVE</span></div><iframe id="lab-preview" title="Vista previa del código" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div></div><p class="lab-help">💡 Reto: cambia el color, agrega un título o crea un botón. Presiona <strong>Ejecutar</strong> para ver el resultado. Este laboratorio admite HTML y CSS; las clases Tailwind se practican en las misiones.</p></div>
+    </section>
+
+    <section class="footer-cta section-block"><span class="eyebrow">¿LISTO PARA TU SIGUIENTE MISIÓN?</span><h2>TODO GRAN DEVELOPER<br>EMPEZÓ EN <span>NIVEL 1.</span></h2><a class="btn btn-primary" href="#mundos">⚡ SEGUIR SUBIENDO DE NIVEL</a></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><div class="footer-brand"><strong>CODE<span>QUEST</span></strong><p>Aprende. Practica. Evoluciona.</p></div><p>Hecho para quienes convierten la curiosidad en código. ♥</p><button id="reset-progress" class="reset-link" type="button">Reiniciar progreso</button></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="quiz-dialog" class="quiz-dialog" aria-labelledby="quiz-heading"><div class="quiz-head"><span class="eyebrow">⚔ DESAFÍO DE CONOCIMIENTO</span><button type="button" id="quiz-close" aria-label="Cerrar cuestionario" class="icon-button">✕</button></div><div id="quiz-body"></div></dialog>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183c32">
+  <meta name="description" content="Explora recetas y estandariza costos, cantidades y rentabilidad de tu cocina.">
+  <title>Mise — Recetas y gestión gastronómica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a href="#inicio" class="brand" aria-label="Mise, ir al inicio"><span class="brand-icon">✳</span><span>mise<span class="brand-dot">.</span></span></a>
+    <nav class="navigation" aria-label="Navegación principal">
+      <a href="#recetas" class="nav-link active" data-nav="recetas">Explorar recetas</a>
+      <a href="#nutricion" class="nav-link" data-nav="nutricion">Nutrición</a>
+      <a href="#estandarizar" class="nav-link" data-nav="estandarizar">Estudio de costos</a>
+    </nav>
+    <button class="nav-cta" id="newRecipeBtn">＋ Crear receta</button>
+  </header>
+
+  <main id="main">
+    <section class="hero page-wrap" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> TU ESPACIO GASTRONÓMICO</div>
+        <h1>La cocina es arte.<br><em>Los números,</em> <span>también.</span></h1>
+        <p>Inspírate con recetas del mundo y lleva cada ingrediente, porción y ganancia bajo control.</p>
+        <div class="hero-actions"><a class="btn btn-lime" href="#recetas">Descubrir recetas <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#estandarizar">Calcular mis costos <span aria-hidden="true">→</span></a></div>
+        <div class="hero-trust"><div class="avatar-stack"><span>👩🏻‍🍳</span><span>👨🏽‍🍳</span><span>👩🏾‍🍳</span></div><span><strong>Tu cocina, más inteligente</strong><small>De la inspiración a la rentabilidad</small></span></div>
+      </div>
+      <div class="hero-visual" aria-label="Plato gastronómico presentado sobre una mesa">
+        <div class="hero-photo"></div>
+        <div class="floating-card top"><span class="float-emoji">✨</span><span><strong>Una buena idea</strong><small>empieza con una receta</small></span></div>
+        <div class="floating-card bottom"><span class="float-icon">↗</span><span><small>Margen objetivo</small><strong>65% <span class="green">●</span></strong></span></div>
+      </div>
+    </section>
+
+    <section class="recipes-section" id="recetas">
+      <div class="page-wrap">
+        <div class="section-label">01 / INSPÍRATE</div>
+        <div class="section-heading"><div><h2>¿Qué cocinamos <em>hoy?</em></h2><p>Sabores de todas partes, para todos los gustos.</p></div><div class="count-badge" id="recipeCount">0 recetas</div></div>
+        <div class="search-row"><label class="search" for="searchInput"><span aria-hidden="true">⌕</span><input id="searchInput" placeholder="Busca un plato o ingrediente..." autocomplete="off"><kbd>/</kbd></label><label class="filter-select"><span>🌍</span><select id="countryFilter" aria-label="Filtrar por país"><option value="todos">Todos los países</option></select></label><label class="filter-select"><span>↕</span><select id="sortFilter" aria-label="Ordenar recetas"><option value="destacadas">Destacadas</option><option value="rating">Mejor calificadas</option><option value="tiempo">Más rápidas</option></select></label></div>
+        <div class="diet-filter"><span>Preferencias</span><label class="filter-select"><select id="dietFilter" aria-label="Filtrar por alimentación"><option value="todas">Todas las recetas</option><option value="vegana">🌱 Veganas</option><option value="vegetariana">🥬 Vegetarianas</option><option value="natural">🍃 Poco procesadas</option></select></label><label class="filter-select"><select id="calorieFilter" aria-label="Filtrar por calorías por porción"><option value="todas">Cualquier cantidad de kcal</option><option value="300">Hasta 300 kcal</option><option value="500">Hasta 500 kcal</option><option value="700">Hasta 700 kcal</option></select></label></div>
+        <div class="chips" id="categoryChips" role="group" aria-label="Filtrar por tipo de cocina"></div>
+        <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="emptyState"><span>🔎</span><h3>Sin resultados por aquí</h3><p>Prueba otro país, categoría o palabra.</p><button class="btn btn-dark" id="resetFilters">Limpiar filtros</button></div>
+      </div>
+    </section>
+
+
+    <section class="nutrition-section" id="nutricion">
+      <div class="page-wrap">
+        <div class="section-label">02 / COCINA A TU MEDIDA</div>
+        <div class="section-heading"><div><h2>Nutrición con <em>intención.</em></h2><p>Encuentra platos según tus objetivos alimentarios.</p></div><div class="save-tag">🥗 Planificador interactivo</div></div>
+        <div class="nutrition-workspace">
+          <form id="nutritionForm" class="nutrition-form">
+            <div class="nutrition-icon">🥦</div><h3>¿Qué necesitas?</h3>
+            <div class="nutrition-form-grid"><label class="field">Calorías máximas / porción<input id="nutritionMax" type="number" min="1" max="10000" value="600" step="10"></label><label class="field">Proteína mínima (g / porción)<input id="nutritionProtein" type="number" min="0" max="1000" value="0" step="1"></label></div>
+            <label class="field">Estilo de alimentación<select id="nutritionDiet"><option value="todas">Sin restricción</option><option value="vegana">Vegana</option><option value="vegetariana">Vegetariana</option><option value="natural">Poco procesada / natural</option></select></label>
+            <button class="btn btn-lime" type="submit">Encontrar recetas ↗</button>
+            <p class="nutrition-disclaimer">Valores nutricionales orientativos por porción. No sustituyen una evaluación nutricional profesional. «Natural» describe aquí preparaciones con pocos ingredientes procesados; no es una certificación.</p>
+          </form>
+          <div class="nutrition-results"><div class="nutrition-results-head"><div><span class="mini-eyebrow">RESULTADOS PERSONALIZADOS</span><h3>Opciones para ti</h3></div><span id="nutritionCount" class="count-badge"></span></div><div id="nutritionMatches" class="nutrition-matches" aria-live="polite"></div><p class="nutrition-hint">Las etiquetas alimentarias deben comprobarse con ingredientes, marcas y posibles sustituciones antes de ofrecer el plato a clientes.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section" id="estandarizar">
+      <div class="page-wrap">
+        <div class="section-label">03 / TU COCINA, BAJO CONTROL</div>
+        <div class="section-heading tool-heading"><div><h2>De receta a <em>negocio.</em></h2><p>Costea tus platos, ajusta porciones y define un precio rentable.</p></div><div class="save-tag">◉ Cálculos en tiempo real</div></div>
+        <div class="workspace">
+          <div class="editor-card">
+            <div class="card-header"><div><span class="mini-eyebrow">FICHA TÉCNICA</span><h3>Tu receta estándar</h3></div><button id="loadSampleBtn" class="text-button" title="Restaurar receta de ejemplo">↺ Ejemplo</button></div>
+            <div class="field-grid"><label class="field field-wide">Nombre del plato<input id="dishName" type="text" value="Bowl de salmón" maxlength="90" placeholder="Ej. Pasta al pesto"></label><label class="field">Porciones de la receta<input id="baseServings" type="number" min="1" max="10000" step="1" value="4"></label><label class="field">Porciones a preparar<input id="targetServings" type="number" min="1" max="10000" step="1" value="4"></label></div>
+            <div class="ingredients-title"><div><h4>Ingredientes</h4><p>El precio corresponde a la cantidad de compra indicada.</p></div><button id="addIngredientBtn" class="add-btn">＋ Ingrediente</button></div>
+            <div class="table-scroll"><table class="ingredient-table"><thead><tr><th>Ingrediente</th><th>Cantidad usada</th><th>Unidad</th><th>Compra</th><th>Unidad</th><th>Precio compra</th><th aria-label="Eliminar"></th></tr></thead><tbody id="ingredientRows"></tbody></table></div>
+            <div class="info-note">ⓘ Las conversiones funcionan entre <strong>g ↔ kg</strong> y <strong>ml ↔ L</strong>. Para convertir volumen en peso necesitas la densidad del ingrediente.</div>
+            <div class="extra-costs"><h4>Otros costos</h4><div class="field-grid"><label class="field">Empaque por receta ($)<input id="packagingCost" type="number" min="0" step="100" value="2000"></label><label class="field">Mano de obra por receta ($)<input id="laborCost" type="number" min="0" step="100" value="12000"></label><label class="field">Costos indirectos por receta ($)<input id="overheadCost" type="number" min="0" step="100" value="4000"></label><label class="field">Merma (%)<input id="wastePercent" type="number" min="0" max="100" step="0.5" value="5"></label></div></div>
+            <div class="editor-actions"><button class="btn btn-dark" id="saveCostBtn">↧ Guardar ficha</button><button class="btn btn-soft" id="exportBtn">↓ Exportar CSV</button><span id="saveMessage" role="status"></span></div>
+          </div>
+          <aside class="results-column" aria-label="Resumen de costos">
+            <div class="results-card"><span class="mini-eyebrow">RESUMEN FINANCIERO</span><h3>Los números claros.<br><em>Siempre.</em></h3><div class="result-line"><span>Costo total del lote</span><strong id="totalCost">—</strong></div><div class="result-line"><span>Costo por porción</span><strong id="unitCost">—</strong></div><div class="result-line"><span>Porciones calculadas</span><strong id="computedServings">—</strong></div><div class="divider"></div><div class="field result-field"><label for="marginInput">Margen de ganancia deseado <span class="tooltip" title="Margen = (precio de venta - costo) / precio de venta. No es lo mismo que recargo sobre el costo.">ⓘ</span></label><div class="slider-line"><input id="marginInput" type="range" min="1" max="95" value="65"><output id="marginDisplay" for="marginInput">65%</output></div></div><div class="price-feature"><span>Precio sugerido por porción</span><strong id="suggestedPrice">—</strong><small>Antes de impuestos, comisiones y descuentos no incluidos arriba.</small></div><div class="result-line"><span>Ganancia bruta por porción</span><strong id="grossProfit">—</strong></div><div class="result-line"><span>Food cost + otros costos / venta</span><strong id="costPercent">—</strong></div></div>
+            <div class="units-card"><div class="units-icon">⚖</div><h3>Conversor rápido</h3><p>Pasa de una unidad a otra en segundos.</p><div class="convert-row"><input id="convertValue" type="number" min="0" value="1" step="any" aria-label="Cantidad a convertir"><select id="convertFrom" aria-label="Unidad de origen"><option value="kg">kg</option><option value="g">g</option><option value="L">L</option><option value="ml">ml</option></select><button id="swapUnits" aria-label="Intercambiar unidades" title="Intercambiar unidades">⇄</button><select id="convertTo" aria-label="Unidad de destino"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option></select></div><div class="conversion-result" id="conversionResult" aria-live="polite">1 kg = 1.000 g</div></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="bottom-cta page-wrap"><div><span class="section-label">COCINA CON PROPÓSITO</span><h2>Menos hojas de cálculo.<br><em>Más sabor.</em></h2></div><a class="btn btn-lime" href="#recetas">Encontrar inspiración ↗</a></section>
+  </main>
+  <footer class="footer"><div class="page-wrap footer-inner"><a href="#inicio" class="brand"><span class="brand-icon">✳</span> mise<span class="brand-dot">.</span></a><p>Hecho para quienes aman cocinar y quieren crecer. © <span id="year"></span></p><a href="#inicio">Volver arriba ↑</a></div></footer>
+
+  <dialog id="recipeDialog" class="recipe-dialog" aria-labelledby="dialogTitle"><div class="dialog-content"><button class="close-dialog" id="closeDialog" aria-label="Cerrar receta">✕</button><div class="dialog-cover" id="dialogCover"></div><div class="dialog-body"><div class="recipe-topline" id="dialogMeta"></div><h2 id="dialogTitle"></h2><p id="dialogDescription"></p><div class="dialog-stat-row"><span id="dialogTime"></span><span id="dialogDifficulty"></span><label class="servings-label">Porciones <input id="dialogServings" type="number" min="1" max="100" value="2" aria-label="Cambiar número de porciones"></label></div><div id="dialogNutrition" class="dialog-nutrition" aria-live="polite"></div><div class="dialog-columns"><div><h3>Ingredientes <small id="ingredientLabel"></small></h3><ul class="dialog-ingredients" id="dialogIngredients"></ul><button id="useInCostBtn" class="btn btn-dark use-cost">✳ Llevar al costeo →</button></div><div><h3>Manos a la obra</h3><ol class="dialog-steps" id="dialogSteps"></ol></div></div><div class="rate-panel"><div><h3>¿Qué te pareció?</h3><p>Tu valoración se guarda en este navegador.</p></div><div class="star-group" id="starGroup" role="group" aria-label="Calificar receta de 1 a 5 estrellas"><button data-star="1" aria-label="1 estrella">★</button><button data-star="2" aria-label="2 estrellas">★</button><button data-star="3" aria-label="3 estrellas">★</button><button data-star="4" aria-label="4 estrellas">★</button><button data-star="5" aria-label="5 estrellas">★</button></div></div></div></div></dialog>
+
+  <dialog id="createDialog" class="create-dialog" aria-labelledby="createTitle"><form id="createRecipeForm" class="create-form"><button type="button" class="close-dialog" id="closeCreateBtn" aria-label="Cerrar">✕</button><span class="section-label">TU PROPIA CREACIÓN</span><h2 id="createTitle">Nueva receta ✳</h2><p>Comparte una idea con tu recetario personal.</p><label class="field">Nombre de la receta<input name="name" required maxlength="90" placeholder="Ej. Mi torta de chocolate"></label><div class="field-grid"><label class="field">País<input name="country" required maxlength="40" placeholder="Colombia"></label><label class="field">Categoría<select name="category"><option>Pastelería</option><option>Cocina de mar</option><option>Coctelería</option><option>Platos fuertes</option><option>Vegetariana</option></select></label><label class="field">Tiempo (min)<input name="time" type="number" min="1" value="30" required></label><label class="field">Porciones<input name="servings" type="number" min="1" value="4" required></label></div><div class="nutrition-create-box"><h3>🥗 Información nutricional <small>por porción</small></h3><p>Opcional. Si no tienes datos calculados, deja estos campos vacíos.</p><div class="field-grid"><label class="field">Calorías (kcal)<input name="kcal" type="number" min="0" step="any" placeholder="Ej. 350"></label><label class="field">Proteína (g)<input name="protein" type="number" min="0" step="any" placeholder="Ej. 20"></label><label class="field">Carbohidratos (g)<input name="carbs" type="number" min="0" step="any" placeholder="Ej. 30"></label><label class="field">Grasas (g)<input name="fat" type="number" min="0" step="any" placeholder="Ej. 15"></label></div><label class="field">Tipo de alimentación<select name="diet"><option value="sin-verificar">Sin verificar</option><option value="vegana">Vegana (declarada)</option><option value="vegetariana">Vegetariana (declarada)</option><option value="natural">Poco procesada (declarada)</option><option value="omnivora">Omnívora</option></select></label></div><label class="field">Ingredientes <small>(uno por línea: cantidad unidad nombre, ej. 200 g harina)</small><textarea name="ingredients" rows="4" required placeholder="200 g harina\n2 unidad huevos\n150 ml leche"></textarea></label><label class="field">Preparación <small>(un paso por línea)</small><textarea name="steps" rows="4" required placeholder="Mezcla los ingredientes.\nHornea durante 30 minutos."></textarea></label><button class="btn btn-lime form-submit" type="submit">Guardar en mi recetario ↗</button></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

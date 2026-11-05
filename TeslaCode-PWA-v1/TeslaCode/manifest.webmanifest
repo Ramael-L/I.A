@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "TeslaCode · Aprende programación",
+  "short_name": "TeslaCode",
+  "description": "Aprende programación desde cero con rutas, lecciones y retos interactivos.",
+  "start_url": "./index.html#/inicio",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101320",
+  "theme_color": "#101320",
+  "lang": "es",
+  "orientation": "any",
+  "categories": ["education","productivity"],
+  "icons": [{"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}],
+  "shortcuts": [{"name":"Mis rutas","url":"./index.html#/rutas"},{"name":"Practicar","url":"./index.html#/practicar"}]
+}
