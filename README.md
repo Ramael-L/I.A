@@ -1,4 +1,4 @@
-# I.A
+
 
 promts de lo que pedimos para hacer las paginas 
 
@@ -41,3 +41,9 @@ quiero que me hagas una pagina web sobre recetas de cocina pero tambien quiero q
 
 
 y esto sobre la primera que hicimos de code quest
+
+
+tambien en la semana 3 tenemos la pagina que realizamos en la clase que son las que tengo aqui y esta que publicamos en git hub pages :https://juan98698.github.io/Tesla-Code/#/inicio
+que es la pagina final que presentamos , nuestro grupo fueron : Cristan benites, Juna manuel , juan david quintero , Ramael Gonzalez Florez
+
+Anterior mente para la actividad de la semana1 nos hicimos : Fransico,Alan, Yuliana,Tatiana, Ramael 
