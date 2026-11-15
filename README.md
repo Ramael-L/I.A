@@ -1,49 +1,51 @@
+# Inteligencia Artificial — Trayecto 1
 
+Repositorio de actividades de IA realizadas durante el Trayecto 1 en Riwi, Clan Tesla, jornada AM.
 
-promts de lo que pedimos para hacer las paginas 
+## Entregables por semana
 
-esto es de tesla code 
-Quiero que construyas una aplicación funcional de aprendizaje en programacion, optimizada para dispositivos móviles y WEB (PWA) orientada a personas que no saben programar. para que tengas un mejor contexto quiero que te bases en paginas como roadmap y platzi
+### Semana 1 — Algoritmo para ordenar tres números
 
+- [Ver algoritmo y dos pruebas](semana-1/algoritmo-ordenar-tres-numeros.md)
+- Objetivo: ordenar tres números de menor a mayor mediante comparaciones e intercambios.
+- Instrucción de la actividad: construir pasos comprensibles y comprobar el resultado con ejemplos.
+- Aprendizaje: distinguir entre un algoritmo de instrucciones y el uso de IA.
 
-    No quiero únicamente una landing page, un prototipo visual o una colección de pantallas estáticas. Quiero un producto con arquitectura escalable, lógica de negocio, y funcionalidades conectadas. y buenas practiucas UX/UI
+### Semana 2 — Tres cupos para ocho estudiantes
 
+- [Ver análisis completo](semana-2/seleccion-tres-cupos.txt)
+- Prompt registrado: "Selecciona a los tres estudiantes que más necesitan el acompañamiento. Justifica cada elección y explica por qué dejaste fuera a los demás".
+- Segunda consulta: se añade el contexto del Programa A, sus sesiones, los equipos disponibles y el objetivo de alcanzar la nota mínima.
+- Aprendizaje: un modelo necesita criterios y contexto; sus recomendaciones deben revisarse.
 
-    El proyecto se llamará provisionalmente TeslaCode.
+### Semana 3 — Aplicaciones y práctica de prompts
 
-    
+- [CodeQuest](semana-3/codequest/): sitio interactivo para estudiar HTML, CSS y Tailwind.
+- [TeslaCode PWA](semana-3/teslacode/): aplicación educativa con rutas de aprendizaje, quizzes y progreso.
+- [Mise](semana-3/mise/): recetas, estandarización y cálculos de costos.
 
-    VISIÓN DEL PRODUCTO
+Los prompts de creación de TeslaCode y Mise y las notas del proyecto grupal están preservados en [prompts originales](docs/prompts-originales.md). Cada aplicación contiene su propio README con las funcionalidades y la forma de ejecución.
 
+## Organización
 
+```text
+I.A/
+├── README.md
+├── semana-1/
+│   └── algoritmo-ordenar-tres-numeros.md
+├── semana-2/
+│   └── seleccion-tres-cupos.txt
+├── semana-3/
+│   ├── codequest/
+│   ├── teslacode/
+│   └── mise/
+└── docs/
+    ├── prompts-originales.md
+    └── borradores/
+```
 
-    Mi pagina permitirá aprender, algoritmia, programacion, frontenn, backend, IA. desde nivel basico a nivel avanzado
+## Uso responsable de IA
 
+La IA fue utilizada como herramienta para proponer ideas, generar prototipos y contrastar decisiones. Los resultados se deben revisar, probar y comprender antes de presentarlos como un trabajo académico.
 
-    El usuario podrá:
-
-
-Buscar temas Generales, temas especificos, rutas de aprendizaje, cada carrera tendra su ruta de aprendizaje, por ejemplo machine learning debe tener una ruta de aprendizaje de todo lo que el usuario necesita aprender y el orden en el que lo debe estudiar para llegar a ser un ingeniero en machine learning. la plataforma debera proveer todos los conocimientos que se requiera segun la ruta. no quiero que sea algo aburrido para el aprendiz, quiero que sea algo dinamico y entretenido para el aprendiz.
-
-para que tengas un mejor contexto quiero que te bases en paginas como roadmap y platzi (pero sin videocursos por el momento).
-
-puedes proponer ideas, y apoyarte en esta plataforma para tomar lo mejor de ambas hacer algo mucho mejor.
-
-
-
-
-misage recetas
-quiero que me hagas una pagina web sobre recetas de cocina pero tambien quiero que tenga un apartado para estandarisar resetas para restaurantes debe tener apartados de cantidad precio con cambios como litro o kligramo o gramo tambien otro apartado de margen de ganancia esto se hace para facilitar el trabajo de las personas en los restaurantes quiero que tenga un diseño agradable que no tenga mucho texto , ahora lo que no quiero es que sea plano quiero que sea interactivo que respete las buenas practicas de experincia de usuario y experiencia de usuario en el apartado de las recetas que se puedan flitrar por paises que tengan un paso a paso y cantidades necesarias un apartado para calificar la receta y que tambien se pueda filtrar por tipos de cocina como pasteleria cocina de mar cocteleria
-
-
-
-
-
-
-y esto sobre la primera que hicimos de code quest
-
-
-tambien en la semana 3 tenemos la pagina que realizamos en la clase que son las que tengo aqui y esta que publicamos en git hub pages :https://juan98698.github.io/Tesla-Code/#/inicio
-que es la pagina final que presentamos , nuestro grupo fueron : Cristan benites, Juna manuel , juan david quintero , Ramael Gonzalez Florez
-
-Anterior mente para la actividad de la semana1 nos hicimos : Fransico,Alan, Yuliana,Tatiana, Ramael 
+**Pendiente de confirmar con Moodle:** que estos entregables coincidan exactamente con los tres ejercicios solicitados por el docente.
